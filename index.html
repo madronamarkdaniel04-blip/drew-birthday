@@ -1,0 +1,111 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kyle ❤️</title><style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    width:90%;
+    max-width:600px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin-top:15px;
+    font-size:16px;
+}
+
+.hidden{
+    display:none;
+}
+
+.heart{
+    font-size:40px;
+    cursor:pointer;
+}
+
+input{
+    padding:10px;
+    width:80%;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+#letter{
+    animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style></head><body><div class="box"><div id="step1">
+<h2>❤️ Welcome Kyle ❤️</h2>
+<p>Press Start to begin your journey.</p>
+<button onclick="next(1,2)">Start</button>
+</div><div id="step2" class="hidden">
+<h2>Question #1</h2>
+<p>What shape represents love?</p>
+<button onclick="next(2,3)">❤️ Heart</button>
+<button onclick="alert('Wrong answer 😝')">⭐ Star</button>
+</div><div id="step3" class="hidden">
+<h2>Find the Hidden Heart</h2><span>🌸 🌸 🌸 🌸 🌸</span><br><br>
+<span>🌸 🌸 <span class="heart" onclick="next(3,4)">❤️</span> 🌸 🌸</span><br><br>
+<span>🌸 🌸 🌸 🌸 🌸</span>
+
+</div><div id="step4" class="hidden">
+<h2>Secret Code</h2>
+<p>Enter the secret code:</p><input id="code" placeholder="Enter code"><br><button onclick="checkCode()">Unlock</button>
+
+</div><div id="step5" class="hidden">
+<h2>Final Door ❤️</h2><p>Almost there...</p><button onclick="next(5,6)">Open Letter</button>
+
+</div><div id="step6" class="hidden">
+<div id="letter"><h1>💌 Dear Kyle Mindoro 💌</h1><p>
+Thank you for taking this little journey.
+</p><p>
+I wanted to create something special just for you.
+Every smile, every memory, and every moment shared
+means more than words can explain.
+</p><p>
+No matter where life takes us,
+you will always hold a special place in my heart.
+</p><h2>❤️ With Love ❤️</h2></div>
+</div></div><script>
+
+function next(current,nextStep){
+document.getElementById("step"+current).style.display="none";
+document.getElementById("step"+nextStep).style.display="block";
+}
+
+function checkCode(){
+
+let code=document.getElementById("code").value;
+
+if(code==="KYLE"){
+next(4,5);
+}else{
+alert("Wrong code ❤️");
+}
+
+}
+
+</script></body>
+</html>
